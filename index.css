@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.scan{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scan .fingerprint{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: url(img/01.png);
+    background-size: 300px;
+}
+.scan .fingerprint::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url(img/02.png);
+    background-size: 300px;
+    width: 100%;
+    height: 100%;
+    animation: animate 4s ease-in-out infinite;
+}
+
+h3{
+    margin-top: 10px;
+    font-size: 25px;
+    color: aqua;
+    filter: drop-shadow(0 0 20px aqua) drop-shadow(0 0 20px aqua);
+}
+
+@keyframes animate{
+    0%,100%{
+        height: 0%;
+    }
+    50%{
+        height: 100%;
+    }
+}
+
+.scan .fingerprint::after{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background: aqua;
+    animation: line 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px aqua) drop-shadow(0 0 20px aqua);
+}
+
+@keyframes line{
+    0%,100%{
+        top: 0%;
+    }
+    50%{
+        top: 97%;
+    }
+}
+
